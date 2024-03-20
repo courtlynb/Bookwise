@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    kotlin("plugin.serialization") version "1.9.23"
 }
 
 android {
@@ -59,6 +60,17 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    // Retrofit
+    implementation(libs.retrofit2.retrofit)
+// Retrofit with Scalar Converter
+    implementation(libs.converter.scalars)
+    // Retrofit with Kotlin serialization Converter
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.retrofit2.retrofit)
+    // Coil
+    implementation(libs.coil.compose)
+    // Serialization
+    implementation(libs.kotlinx.serialization.json)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
